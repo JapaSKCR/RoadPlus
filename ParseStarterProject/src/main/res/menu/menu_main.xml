@@ -1,0 +1,30 @@
+<!--
+  ~ Copyright (c) 2015-present, Parse, LLC.
+  ~ All rights reserved.
+  ~
+  ~ This source code is licensed under the BSD-style license found in the
+  ~ LICENSE file in the root directory of this source tree. An additional grant
+  ~ of patent rights can be found in the PATENTS file in the same directory.
+  -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".Activity.MainActivity">
+
+    <item android:id="@+id/config"
+          android:title="@string/action_config"
+          android:orderInCategory="100"
+          app:showAsAction="never" />
+
+    <item android:id="@+id/sair"
+        android:title="@string/action_sair"
+        android:orderInCategory="200"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/galeria"
+        android:title="@string/action_camera"
+        android:orderInCategory="300"
+        android:icon="@drawable/ic_action_camera"
+        app:showAsAction="ifRoom"/>
+
+</menu>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_degrade"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".Activity.CadastroActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+        android:id="@+id/idNomeUsuario"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/fundo_caixa_texto"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Usuário"
+        android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/idEmail"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/idNomeUsuario"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="E-mail"
+            android:inputType="textWebEmailAddress"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/idSenhaCadastro"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idEmail"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/idConfirmarSenha"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSenhaCadastro"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Confirme sua senha"
+            android:inputType="textPassword"
+            android:padding="14dp" />
+
+        <Button
+            android:id="@+id/idBotaoCadastrar"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idConfirmarSenha"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_botao"
+            android:padding="14dp"
+            android:text="Cadastrar" />
+
+        <TextView
+            android:id="@+id/faca_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idBotaoCadastrar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="@string/volte_pro_login" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
