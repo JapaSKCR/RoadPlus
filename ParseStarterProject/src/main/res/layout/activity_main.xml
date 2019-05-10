@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="#212121"
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
@@ -15,14 +15,14 @@
         android:id="@+id/view_pager_main"
         android:layout_height="0dp"
         android:layout_width="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="3"/>
 
     <com.parse.starter.util.SlidingTabLayout
         android:id="@+id/sliding_tab_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:elevation="8dp"
+        android:elevation="10dp"
         android:background="@color/colorPrimary"/>
 
 </LinearLayout>

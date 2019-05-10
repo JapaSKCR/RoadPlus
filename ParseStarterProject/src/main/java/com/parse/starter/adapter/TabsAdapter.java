@@ -58,8 +58,8 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
         return fragment;
     }
 
-    @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+   @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
         fragmentHashMap.remove(position);
 

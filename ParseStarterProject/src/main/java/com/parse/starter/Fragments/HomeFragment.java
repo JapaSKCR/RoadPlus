@@ -54,23 +54,26 @@ public class HomeFragment extends Fragment {
 
     private void getPosts() {
 
-        query = ParseQuery.getQuery("Imagem")
-                .whereEqualTo("userId", ParseUser.getCurrentUser().getObjectId())
-                .orderByDescending("createdAt");
+        query = ParseQuery.getQuery("Imagem");
+        query.whereEqualTo("userId", ParseUser.getCurrentUser().getObjectId());
+        query.orderByDescending("createdAt");
 
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 if(e == null){
 
+                    postagens.clear();
                     if(objects.size() > 0){
-                        postagens.clear();
+
                         for (ParseObject parseObject : objects){
 
                             postagens.add(parseObject);
-                        }
 
+
+                        }
                         adapter.notifyDataSetChanged();
+
                     }
                 } else {
                     e.printStackTrace();

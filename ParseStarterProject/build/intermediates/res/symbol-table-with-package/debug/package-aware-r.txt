@@ -1014,6 +1014,7 @@ drawable design_snackbar_background
 drawable fundo_botao
 drawable fundo_caixa_texto
 drawable fundo_degrade
+drawable fundo_feed
 drawable ic_action_arrow_left
 drawable ic_action_camera
 drawable ic_action_home
@@ -1135,7 +1136,9 @@ id idBotaoCadastrar
 id idBotaoLogin
 id idConfirmarSenha
 id idEmail
+id idModelo
 id idNomeUsuario
+id idPreco
 id idSenhaCadastro
 id idSenhaLogin
 id idTitulo

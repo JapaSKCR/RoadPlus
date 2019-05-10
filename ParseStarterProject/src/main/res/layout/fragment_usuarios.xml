@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".Fragments.UsuariosFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
 
-
     <ListView
+        android:id="@+id/usuarios_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/usuarios_list"
-        android:dividerHeight="0.5dp"
+        android:layout_gravity="center_horizontal|top"
         android:divider="@android:color/background_dark"
-        android:layout_gravity="center_horizontal|top"/>
+        android:dividerHeight="0.5dp" />
 
 </FrameLayout>

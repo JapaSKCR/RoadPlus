@@ -3,6 +3,7 @@ package com.parse.starter.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,8 @@ import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 import com.parse.starter.R;
 import com.parse.starter.util.ParseErros;
+
+import java.util.regex.Pattern;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -55,6 +58,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private void cadastrarUsuario() {
 
+
         String pass = senha.getText().toString();
         String match = confirmarSenha.getText().toString();
 
@@ -62,7 +66,8 @@ public class CadastroActivity extends AppCompatActivity {
         user.setUsername(usuario.getText().toString());
         user.setEmail(email.getText().toString());
 
-        if( pass.equals(match)){
+        if(pass.equals(match)){
+
 
             user.setPassword(senha.getText().toString());
             user.signUpInBackground(new SignUpCallback() {
@@ -71,20 +76,22 @@ public class CadastroActivity extends AppCompatActivity {
 
                     if (e == null){
 
-                        Toast.makeText(getApplicationContext(), "Usuário criado com Sucesso", Toast.LENGTH_LONG).show();
-                        abrirViewPrincipal();
-                    } else {
-                        ParseErros erro = new ParseErros();
-                        String mensagemErro = erro.getErros(e.getCode());
-                        Toast.makeText(getApplicationContext(), mensagemErro, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Usuário criado com Sucesso", Toast.LENGTH_LONG).show();
+                            abrirViewPrincipal();
+                        } else {
+                            ParseErros erro = new ParseErros();
+                            String mensagemErro = erro.getErros(e.getCode());
+                            Toast.makeText(getApplicationContext(), mensagemErro, Toast.LENGTH_LONG).show();
+                        }
                     }
-                }
-            });
+                 });
 
         } else {
 
-            Toast.makeText(getApplicationContext(), "Senhas diferentes", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Email inválido", Toast.LENGTH_LONG).show();
+
         }
+
     }
 
     public void abrirLoginUsuario(){
@@ -101,5 +108,8 @@ public class CadastroActivity extends AppCompatActivity {
         finish();
 
     }
+
+
+
 
 }

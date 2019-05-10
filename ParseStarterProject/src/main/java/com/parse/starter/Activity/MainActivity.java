@@ -16,7 +16,6 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
     if(requestCode == 1 && resultCode == RESULT_OK && data != null){
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap imagem = MediaStore.Images.Media.getBitmap(getContentResolver(), localImagemSelecionada);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        imagem.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        imagem.compress(Bitmap.CompressFormat.PNG, 75, stream);
 
         byte[] byteArray = stream.toByteArray();
 

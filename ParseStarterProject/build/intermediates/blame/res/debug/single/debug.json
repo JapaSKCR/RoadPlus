@@ -768,6 +768,10 @@
         "source": "D:\\Downloads\\RoadPlus\\ParseStarterProject\\src\\main\\res\\drawable\\fundo_degrade.xml"
     },
     {
+        "merged": "D:\\Downloads\\RoadPlus\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\drawable_fundo_feed.xml.flat",
+        "source": "D:\\Downloads\\RoadPlus\\ParseStarterProject\\src\\main\\res\\drawable\\fundo_feed.xml"
+    },
+    {
         "merged": "D:\\Downloads\\RoadPlus\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\japa_\\.gradle\\caches\\transforms-2\\files-2.1\\ba72b0762f8cb5b8f75492d086f37a91\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },

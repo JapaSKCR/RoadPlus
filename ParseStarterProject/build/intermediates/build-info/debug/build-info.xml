@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.4.0"
-    timestamp="1557291473043"
+    timestamp="1557467117751"
     token="4239241433923828215"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -23,6 +23,9 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\instant-run-apk\debug\ParseStarterProject-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
         location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
@@ -45,10 +48,10 @@
         location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
         location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -56,14 +59,14 @@
     <artifact
         location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
-    <artifact
-        location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\instant-run-apk\debug\ParseStarterProject-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1557291473043"
+        timestamp="1557467117751"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\instant-run-apk\debug\ParseStarterProject-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
@@ -86,10 +89,10 @@
             location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -97,9 +100,6 @@
         <artifact
             location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
-        <artifact
-            location="D:\Downloads\RoadPlus\ParseStarterProject\build\intermediates\instant-run-apk\debug\ParseStarterProject-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

@@ -42,7 +42,7 @@ public class UsuariosAdapter extends ArrayAdapter<ParseUser> {
 
         TextView username = view.findViewById(R.id.texto_users);
 
-        ParseUser user = usuarios.get( position);
+        ParseUser user = usuarios.get(position);
         username.setText(user.getUsername());
 
         return view;
