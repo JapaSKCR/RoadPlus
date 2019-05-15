@@ -1,4 +1,0 @@
-#Fri May 10 02:14:58 GFT 2019
-base.0=D\:\\Downloads\\RoadPlus\\ParseStarterProject\\build\\intermediates\\transforms\\dexMerger\\debug\\3
-path.0=classes.dex
-renamed.0=classes.dex
