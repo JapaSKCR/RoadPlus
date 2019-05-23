@@ -32,16 +32,18 @@ public class HomeAdapter extends ArrayAdapter<ParseObject> {
     @Override
     public View getView(int position,  View convertView,  ViewGroup parent) {
 
-         //view = convertView;
+        View view = convertView;
 
-        //if( view == null){
+        if( view == null) {
 
-        LayoutInflater inflater =  (LayoutInflater) context.getSystemService( context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.lista_postagem, parent, false);
+            view = inflater.inflate(R.layout.lista_postagem, parent, false);
+
+        }
 
 
-            if(postagens.size() > 0){
+        if(postagens.size() > 0){
 
                 ImageView imagemPost = view.findViewById(R.id.imagem_post);
                 TextView modelo = view.findViewById(R.id.idModelo);
@@ -61,7 +63,7 @@ public class HomeAdapter extends ArrayAdapter<ParseObject> {
 
             }
 
-        //}
+
 
         return view;
     }
