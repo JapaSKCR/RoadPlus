@@ -2,14 +2,11 @@ package com.parse.starter.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
@@ -26,7 +23,7 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
 
     private Context context;
     //private String[] abas = new String[]{"HOME", "USERS"};
-    private int[] icones =  new int[]{R.drawable.ic_action_home, R.drawable.ic_people};
+    private int[] icones =  new int[]{R.drawable.ic_directions_car, R.drawable.money_icon};
     private int tamanhoIcone;
     private HashMap<Integer, Fragment> fragmentHashMap;
     public TabsAdapter(FragmentManager fm, Context context) {

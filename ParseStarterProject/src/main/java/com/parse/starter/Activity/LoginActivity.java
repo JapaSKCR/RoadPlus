@@ -7,12 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.starter.R;
-import com.parse.starter.util.ParseErros;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,7 +24,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       //ParseUser.logOut();
 
         verificarUsuarioLogado();
 
@@ -37,10 +34,28 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                boolean erro = false;
+
                 String user = usuario.getText().toString();
                 String password = senha.getText().toString();
 
-                verificarLogin(user, password);
+                if (user.isEmpty()) {
+                    erro = true;
+                    usuario.setError("Campo Obrigatório");
+                }
+
+                if (password.isEmpty()) {
+                    erro = true;
+                    senha.setError("Campo Obrigatório");
+                }
+
+                if(erro != true) {
+
+                    verificarLogin(user, password);
+
+                }
+
             }
         });
 
@@ -57,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else {
 
-                    Toast.makeText(getApplicationContext(), "Erro ao fazer login"+ e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Erro ao fazer login "+ e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });

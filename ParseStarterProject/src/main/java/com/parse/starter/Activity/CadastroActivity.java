@@ -3,22 +3,16 @@ package com.parse.starter.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 import com.parse.starter.R;
 import com.parse.starter.util.ParseErros;
-
-import java.util.regex.Pattern;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -58,37 +52,64 @@ public class CadastroActivity extends AppCompatActivity {
 
     private void cadastrarUsuario() {
 
+        boolean erro = false;
 
         String pass = senha.getText().toString();
         String match = confirmarSenha.getText().toString();
 
-        ParseUser user = new ParseUser();
-        user.setUsername(usuario.getText().toString());
-        user.setEmail(email.getText().toString());
 
-        if(pass.equals(match)){
+        if (pass.isEmpty()) {
+            erro = true;
+            senha.setError("Campo Obrigatório");
+        }
+
+        if (match.isEmpty()) {
+            erro = true;
+            confirmarSenha.setError("Campo Obrigatório");
+        }
 
 
-            user.setPassword(senha.getText().toString());
-            user.signUpInBackground(new SignUpCallback() {
-                @Override
-                public void done(ParseException e) {
+        if (usuario.getText().toString().isEmpty()) {
+            erro = true;
+            usuario.setError("Campo Obrigatório");
+        }
 
-                    if (e == null){
+        if (email.getText().toString().isEmpty()) {
+            erro = true;
+            email.setError("Campo Obrigatório");
+        }
+
+        if(erro != true) {
+
+
+            ParseUser user = new ParseUser();
+            user.setUsername(usuario.getText().toString());
+            user.setEmail(email.getText().toString());
+
+            if (pass.equals(match)) {
+
+
+                user.setPassword(senha.getText().toString());
+                user.signUpInBackground(new SignUpCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                        if (e == null) {
 
                             Toast.makeText(getApplicationContext(), "Usuário criado com Sucesso", Toast.LENGTH_LONG).show();
                             abrirViewPrincipal();
                         } else {
-                            ParseErros erro = new ParseErros();
-                            String mensagemErro = erro.getErros(e.getCode());
-                            Toast.makeText(getApplicationContext(), mensagemErro, Toast.LENGTH_LONG).show();
+
+                            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
-                 });
+                });
 
-        } else {
+            } else {
 
-            Toast.makeText(getApplicationContext(), "Email inválido", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Email inválido", Toast.LENGTH_LONG).show();
+
+            }
 
         }
 

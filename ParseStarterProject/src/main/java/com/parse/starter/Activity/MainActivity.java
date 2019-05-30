@@ -9,14 +9,9 @@
 package com.parse.starter.Activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-
-import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -25,25 +20,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
-import com.parse.starter.Fragments.HomeFragment;
 import com.parse.starter.R;
-import com.parse.starter.adapter.HomeAdapter;
 import com.parse.starter.adapter.TabsAdapter;
 import com.parse.starter.util.SlidingTabLayout;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -108,81 +89,28 @@ public class MainActivity extends AppCompatActivity {
         return true;
       case R.id.config:
         return true;
-      case R.id.galeria:
 
-        postarFoto();
-
-        return true;
       default:
         return super.onOptionsItemSelected(item);
     }
     
   }
 
-  private void postarFoto() {
-
-    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-    startActivityForResult(intent, 1);
-
-  }
-
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-
-    if(requestCode == 1 && resultCode == RESULT_OK && data != null){
-
-      Uri localImagemSelecionada = data.getData();
-
-      try {
-
-        Bitmap imagem = MediaStore.Images.Media.getBitmap(getContentResolver(), localImagemSelecionada);
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        imagem.compress(Bitmap.CompressFormat.PNG, 75, stream);
-
-        byte[] byteArray = stream.toByteArray();
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("ddmmaaaahhmmss");
-        String nomeImagem = dateFormat.format(new Date());
-
-        ParseFile arquivoParse = new ParseFile("imagem_"+ nomeImagem + ".png", byteArray );
-
-        ParseObject parseObject = new ParseObject("Imagem");
-        parseObject.put("userId", ParseUser.getCurrentUser().getObjectId());
-        parseObject.put("imagem", arquivoParse);
-        parseObject.saveInBackground(new SaveCallback() {
-          @Override
-          public void done(ParseException e) {
-
-            if(e == null){
-
-              Toast.makeText(getApplicationContext(),"Upload Concluido", Toast.LENGTH_LONG).show();
-
-              TabsAdapter novoAdapter = (TabsAdapter) viewPager.getAdapter();
-              HomeFragment homeFragmentNovo = (HomeFragment) novoAdapter.getFragment( 0);
-              homeFragmentNovo.atualizaPosts();
-
-            } else {
-
-              Toast.makeText(getApplicationContext(),"Erro de Upload" + e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-
-          }
-        });
-
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-
-    }
-
   }
+
+
+
 
   private void deslogarUsuario() {
 
     ParseUser.logOut();
+    finish();
     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
     startActivity(intent);
+
   }
 }

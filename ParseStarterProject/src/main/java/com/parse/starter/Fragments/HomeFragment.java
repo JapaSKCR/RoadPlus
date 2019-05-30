@@ -8,10 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -31,6 +30,9 @@ public class HomeFragment extends Fragment {
     private ArrayList<ParseObject> postagens;
     private ArrayAdapter<ParseObject> adapter;
     private ParseQuery<ParseObject> query;
+    private ArrayAdapter<ParseUser> userAdapter;
+    private ArrayList<ParseUser> users;
+    private ParseQuery<ParseUser> userQuery;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -44,8 +46,11 @@ public class HomeFragment extends Fragment {
 
         postagens = new ArrayList<>();
         listaPostagens = view.findViewById(R.id.home_postagens);
-        adapter = new HomeAdapter(getActivity(), postagens );
+        adapter = new HomeAdapter(getActivity(), postagens);
         listaPostagens.setAdapter(adapter);
+
+
+
 
         getPosts();
 
@@ -55,7 +60,6 @@ public class HomeFragment extends Fragment {
     private void getPosts() {
 
         query = ParseQuery.getQuery("Imagem");
-        query.whereEqualTo("userId", ParseUser.getCurrentUser().getObjectId());
         query.orderByDescending("createdAt");
 
         query.findInBackground(new FindCallback<ParseObject>() {
