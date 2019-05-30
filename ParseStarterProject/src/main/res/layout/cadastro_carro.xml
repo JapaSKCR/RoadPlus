@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:paddingTop="50dp"
+    tools:context=".Fragments.UsuariosFragment">
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/idTextoModelo"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Modelo"
+            android:maxLength="50"
+            android:padding="14dp" />
+
+
+        <EditText
+            android:id="@+id/idValor"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/idTextoModelo"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Valor"
+            android:inputType="number"
+            android:maxLength="50"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/idAno"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idValor"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Ano"
+            android:inputType="number"
+            android:maxLength="4"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/idCor"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idValor"
+            android:layout_alignEnd="@id/idValor"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:maxLength="20"
+            android:hint="Cor"
+            android:padding="14dp" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idAno"
+            android:layout_marginTop="20dp"
+            android:layout_alignStart="@id/idAno"
+            android:background="@drawable/fundo_caixa_texto"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Telefone para contato"
+            android:maxLength="13"
+            android:inputType="phone"
+            android:padding="14dp"/>
+
+        <ImageView
+            android:id="@+id/idFoto"
+            android:layout_width="62dp"
+            android:layout_height="52dp"
+            android:layout_below="@+id/idCor"
+            android:layout_alignEnd="@id/idCor"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_action_camera"/>
+
+        <TextView
+            android:id="@+id/tesxto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/idFoto"
+            android:layout_alignEnd="@id/idFoto"
+            android:layout_centerHorizontal="true"
+            android:text=""/>
+
+
+        <Button
+            android:id="@+id/idBotaoAnuncio"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tesxto"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fundo_botao"
+            android:padding="14dp"
+            android:text="Anuncie seu veículo"
+            android:backgroundTint="@color/laranja"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
